@@ -1,0 +1,20 @@
+/* _grid_creator.scss, let's create some grids with sass magic. */
+@mixin createGrid($prefix, $size, $min, $max:100%) {
+
+  @media screen and (min-width: $min) {
+    .container {
+      margin: 0 auto;
+      max-width: $max;
+      min-width: 320px;
+      width: 100%;
+    }
+
+    @for $i from 1 through $size {
+      .#{$prefix}-#{$i} {
+        width: $i/$size * 100%;
+        margin-bottom: 10px;
+        padding: 0 15px;
+      }
+    }
+  } 
+}

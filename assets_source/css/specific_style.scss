@@ -1,0 +1,141 @@
+@import "grid_framework";
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300');
+
+// Colors
+$color-background: #F2F4F5; // sort of white
+$color-brand-1: #1F80BD; // sort of blue
+$color-brand-2: gray; // gray
+$color-brand-3: #7D97AD; // 
+
+// Margins
+$margin-xs: 5px;
+$margin-sm: 10px;
+$margin-md: 20px;
+$margin-lg: 30px;
+
+body{
+	background-color: $color-background;
+	color: $color-brand-2;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+hr {
+	border: 0;
+	border-bottom: dotted $color-brand-1 3px;
+}
+
+.header {
+	text-align: center;
+	margin-top: $margin-md;
+	position: relative;
+	
+	.header-logo-container {
+
+		@include breakpoint($tablet) {
+			text-align: left;
+		}
+
+		.header-logo-img {
+			width: 100%;
+
+			@include breakpoint($mobile-l) {
+				width: 200px;
+			}
+
+			@include breakpoint($tablet) {
+				height: 105px;
+				width: 105px;
+			}
+		}
+	}
+
+	.header-text-container {
+	    background-color: $color-background;
+		bottom: 20px;
+    	opacity: 0.9;
+		position: absolute;
+		text-transform: uppercase;
+
+		@include breakpoint($mobile-l) {
+			bottom: 0;
+			position: inherit;
+		}
+
+		@include breakpoint($tablet) {
+			text-align: right;
+		}
+
+		.header-text-title {
+			color: $color-brand-1;
+			font-size: 2em;
+			font-weight: 100;
+			margin: $margin-xs 0;
+
+			@include breakpoint($mobile-l) {
+				font-size: 3em;
+			}
+
+			@include breakpoint($tablet) {
+				font-size: 4em;
+			}
+		}
+
+		.header-text-desc {
+			margin: $margin-xs 0;
+		}
+	}
+}
+
+.content {
+
+	.content-promo {
+
+		.content-promo-container {
+			opacity: 0.8;
+			overflow: hidden;
+			
+			.content-promo-img {
+				margin: auto 0;
+				width: 100%;
+			}
+		}
+	}
+
+	.content-featured {
+
+		.content-featured-container {
+			text-align: center;
+			margin: 0 auto;
+    		max-width: 540px;
+			.content-featured-img {
+				width: 100%;
+			}
+
+			.content-featured-text{
+				padding-bottom: $margin-md;
+
+				.content-featured-title {
+					text-transform: uppercase;
+					margin: $margin-xs 0;
+				}
+
+				.content-featured-teaser {
+					
+					a {
+						text-decoration: none;
+						color: $color-brand-3;
+
+						&:hover {
+							color: $color-brand-1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+}
